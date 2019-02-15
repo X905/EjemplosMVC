@@ -1,0 +1,69 @@
+﻿@model IList<EjemploExcel.Models.EmpleadoVM>
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    @using (Html.BeginForm("ExportarExcel", "Empleado", FormMethod.Post))
+    {
+
+        <br />
+        <br />
+        <h2>
+            Export Data To Excel
+        </h2>
+        <table style="background-color: white; width: 100%;">
+            <tr>
+                <th style="border: 1px dotted black; text-align: left; width: 20%; padding-left: 20px;">
+                    Nombre
+                </th>
+                <th style="border: 2px double black; text-align: center; width: 20%">
+                    Apellido
+                </th>
+                <th style="border: 2px solid black; text-align: center; width: 20%">
+                    Correo
+                </th>
+                <th style="border: 2px solid black; text-align: center; width: 20%">
+                    Telefono
+                </th>
+                <td style="border: 2px solid black; text-align: center; width: 20%">
+                    Dirección
+                </td>
+                <td style="border: 2px solid black; text-align: center; width: 20%">
+                    Departamento
+                </td>
+            </tr>
+            @foreach (var itm in Model)
+            {
+
+            <tr>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(m => itm.Nombre)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(m => itm.Apellido)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(m => itm.Correo)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(m => itm.Telefono)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(m => itm.Direccion)
+                </td>
+                <td style="padding-left: 50px;">
+                    @Html.DisplayFor(m => itm.Departamento)
+                </td>
+            </tr>
+            }
+
+            <tr>
+                <td colspan="4">
+                    <br />
+                    <br />
+                    <input type="submit" value="Exportar" class="btn btn-default" />
+                </td>
+            </tr>
+        </table>
+    }
