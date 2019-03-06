@@ -7,3 +7,16 @@
 <div id="ScheduleCalendar">
 
 </div>
+@section CalendarScripts{
+    <script>
+        $(function () {
+
+            $('#ScheduleCalendar').fullCalendar({
+                defaultView: 'month',
+                editable: false,
+                weekends: false
+            })
+
+        });
+    </script>
+}

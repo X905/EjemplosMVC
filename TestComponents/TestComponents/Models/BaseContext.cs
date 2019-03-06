@@ -9,6 +9,6 @@ namespace TestComponents.Models
 {
     public class BaseContext : DbContext
     {
-        public DbSet<ScheduleModel>Event { get; set; }
+        public DbSet<ScheduleModel>Events { get; set; }
     }
 }

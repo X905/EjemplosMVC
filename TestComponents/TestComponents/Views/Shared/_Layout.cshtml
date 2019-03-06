@@ -39,15 +39,6 @@
     </div>
 
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script>
-        
-        $(function () {
-
-            $('#ScheduleCalendar').fullCalendar({
-                // put your options and callbacks here
-            })
-
-        });
-    </script>
+    @RenderSection("CalendarScripts", required: false)
 </body>
 </html>
